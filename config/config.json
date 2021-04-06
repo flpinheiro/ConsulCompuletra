@@ -1,0 +1,17 @@
+{
+    "datacenter": "compuletra1",
+    "client_addr": "0.0.0.0",
+    "data_dir": "/consul/data",
+    "log_level": "DEBUG",
+    "server": true,
+    "bootstrap": true,
+    "ui_config": {
+        "enabled": true
+    },
+    "acl": {
+        "enabled": true,
+        "tokens": {
+            "master": "123456789"
+        }
+    }
+}

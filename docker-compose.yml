@@ -1,0 +1,16 @@
+# This configuration is intended for development purpose, it's **your** responsibility to harden it for production
+version: '3.4'
+services:
+  consul:
+    container_name: consul
+    image: consul:1.9.4
+    # If you want to expose these ports outside your dev PC,
+    # remove the "127.0.0.1:" prefix
+    ports:
+      - 127.0.0.1:8300:8300
+      - 8500:8500
+      - 127.0.0.1:8600:8600
+    volumes:
+      - ./config:/consul/config
+      - ./data:/consul/data
+    command: consul agent -config-dir ./consul/config
