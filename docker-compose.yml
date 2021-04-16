@@ -11,6 +11,11 @@ services:
       - 8500:8500
       - 127.0.0.1:8600:8600
     volumes:
-      - ./config:/consul/config
-      - ./data:/consul/data
+      - ./config:/consul/config:ro
+      - /home/data:/consul/data
     command: consul agent -config-dir ./consul/config
+
+networks:
+  default:
+    external:
+      name: compuletra
